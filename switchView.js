@@ -84,5 +84,5 @@ updateBtn.addEventListener('click', () => {
 window.onload = () => {
   LoadData();
 
-  inter = setInterval(SwitchView, 15000);
+  inter = setInterval(SwitchView, 20000);
 };
