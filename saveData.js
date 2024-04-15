@@ -9,9 +9,7 @@ const d2dPerc = document.querySelector('.vd2dperc');
 const d2d = document.querySelector('.value-d2d');
 const volumen = document.querySelector('.value-volumen_data');
 const leftToSort = document.querySelector('.value-LTS_data');
-const on30min = document.querySelector('.on30min');
 const on30minTable = document.getElementById('table-30min');
-const on30minTrTable = document.getElementById('tr-table-30min');
 
 //btns
 const saveBtn = document.querySelector('.save');
@@ -176,19 +174,19 @@ const ResetSaveData = () => {
   localStorage.setItem('30min10', 0);
   localStorage.setItem('30min11', 0);
   localStorage.setItem('30min12', 0);
-  localStorage.setItem('30min0Label', '');
-  localStorage.setItem('30min1Label', '');
-  localStorage.setItem('30min2Label', '');
-  localStorage.setItem('30min3Label', '');
-  localStorage.setItem('30min4Label', '');
-  localStorage.setItem('30min5Label', '');
-  localStorage.setItem('30min6Label', '');
-  localStorage.setItem('30min7Label', '');
-  localStorage.setItem('30min8Label', '');
-  localStorage.setItem('30min9Label', '');
-  localStorage.setItem('30min10Label', '');
-  localStorage.setItem('30min11Label', '');
-  localStorage.setItem('30min12Label', '');
+  localStorage.setItem('30min0Label', '00:00');
+  localStorage.setItem('30min1Label', '00:00');
+  localStorage.setItem('30min2Label', '00:00');
+  localStorage.setItem('30min3Label', '00:00');
+  localStorage.setItem('30min4Label', '00:00');
+  localStorage.setItem('30min5Label', '00:00');
+  localStorage.setItem('30min6Label', '00:00');
+  localStorage.setItem('30min7Label', '00:00');
+  localStorage.setItem('30min8Label', '00:00');
+  localStorage.setItem('30min9Label', '00:00');
+  localStorage.setItem('30min10Label', '00:00');
+  localStorage.setItem('30min11Label', '00:00');
+  localStorage.setItem('30min12Label', '00:00');
   localStorage.setItem('howClicks', -1);
   localStorage.setItem('lastLh', '00:00');
   localStorage.setItem('lh', '0');
@@ -272,6 +270,8 @@ export const LoadData = () => {
   d2dInput.value = localStorage.getItem('d2dValue');
   volumenInput.value = localStorage.getItem('volumen');
   leftToSortInput.value = localStorage.getItem('leftToSort');
+  on30minIpnut.value = 0;
+  on30minHourIpnut.value = '00:00';
 
   //views update
   sortStart.innerHTML = sortStartValue;
@@ -298,7 +298,10 @@ const SaveData = () => {
   localStorage.setItem('d2dValue', d2dInput.value);
   localStorage.setItem('volumen', volumenInput.value);
   localStorage.setItem('leftToSort', leftToSortInput.value);
-  Save30min();
+  if (on30minIpnut.value === 0) {
+  } else {
+    Save30min();
+  }
   location.reload();
 };
 

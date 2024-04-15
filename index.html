@@ -12,6 +12,7 @@
   <title>Document</title>
 
   <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <script defer type="module" src="clock.js"></script>
   <script defer type="module" src="charts.js"></script>
   <script defer type="module" src="saveData.js"></script>
@@ -75,10 +76,11 @@
         </div>
       </div>
     </div>
-    <div class="chart-bars">
+    <div class="chart-bars ">
       <div class="bars">
-        <canvas id="bar-chart" style="max-width: 1700px; max-height: 500px;"></canvas>
-        <h3>Wydajność na 30 minut: <span class="on30min"> 3400</span></h3>
+        <canvas id="bar-chart"
+          style="max-width: 1900px; max-height: 600px; border-radius: 15px; padding: 5px;"></canvas>
+        <h3>Wydajność na 30 minut</h3>
       </div>
     </div>
     <div class="update-view">

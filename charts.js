@@ -7,6 +7,17 @@ let sumLeft = Math.abs(volumenList[0] - volumenList[1]);
 let sumVol = Math.abs(sumLeft - volumenList[0]);
 let value = [sumLeft, sumVol];
 
+const plugin = {
+  id: 'customCanvasBackgroundColor',
+  beforeDraw: (chart, args, options) => {
+    const { ctx } = chart;
+    ctx.save();
+    ctx.globalCompositeOperation = 'destination-over';
+    ctx.fillStyle = options.color || '#99ffff';
+    ctx.fillRect(0, 0, chart.width, chart.height);
+    ctx.restore();
+  },
+};
 export const circle = new Chart(ctx, {
   type: 'pie',
   data: {
@@ -24,13 +35,13 @@ export const circle = new Chart(ctx, {
 new Chart(bar, {
   type: 'bar',
   data: {
+    ticks: ['test'],
     labels: on30minListHour,
     datasets: [
       {
-        label: 'Wydajność na 30min',
         data: on30minListValue,
-        backgroundColor: ['rgb(233, 229, 0)'],
-        barThickness: 50,
+        backgroundColor: ['rgb(240, 200, 0)'],
+        barThickness: 55,
       },
     ],
   },
@@ -39,37 +50,37 @@ new Chart(bar, {
       x: {
         title: {
           font: {
-            size: 20,
-            weight: 'bold',
+            size: 45,
+            weight: '900',
           },
           color: 'white',
         },
 
         ticks: {
           font: {
-            size: 40,
-            weight: 'bold',
+            size: 45,
+            weight: '700',
           },
-          color: 'white',
+          color: 'black',
         },
       },
 
       y: {
         title: {
           font: {
-            size: 40,
-            weight: 'bold',
+            size: 45,
+            weight: '900',
           },
-          color: 'white',
+          color: 'black',
         },
 
         ticks: {
           beginAtZero: true,
           font: {
             size: 40,
-            weight: 'bold',
+            weight: '800',
           },
-          color: 'white',
+          color: 'black',
         },
       },
     },
@@ -77,6 +88,10 @@ new Chart(bar, {
       legend: {
         display: false,
       },
+      customCanvasBackgroundColor: {
+        color: 'white',
+      },
     },
   },
+  plugins: [plugin],
 });

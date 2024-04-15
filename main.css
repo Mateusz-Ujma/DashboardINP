@@ -144,7 +144,7 @@ table {
   flex-direction: column;
   background-color: rgb(236, 236, 236);
   padding: 5px;
-  gap: 40px;
+  gap: 20px;
 }
 
 .apm,
@@ -160,7 +160,7 @@ table {
   flex-direction: column;
   background-color: rgb(236, 236, 236);
   padding: 5px;
-  gap: 30px;
+  gap: 20px;
 }
 
 .apm>span,
@@ -171,21 +171,22 @@ table {
 }
 
 .text-sort-start,
-.text-lh {
+.text-lh,
+.text-last-lh {
+  font-size: 9em;
+  font-weight: 800;
+}
+
+
+
+.text-apm,
+.text-d2d {
   font-size: 6em;
   font-weight: 800;
 }
 
-
-.text-last-lh,
-.text-apm,
-.text-d2d {
-  font-size: 5em;
-  font-weight: 800;
-}
-
 .text-sort-end {
-  font-size: 5em;
+  font-size: 8em;
   font-weight: 800;
 }
 
@@ -202,7 +203,7 @@ table {
 .value-apm-perc,
 .value-d2d,
 .value-d2d-perc {
-  font-size: 13em;
+  font-size: 11em;
   font-weight: 800;
 }
 
@@ -303,8 +304,8 @@ input[type="time"] {
 
 .save {
   position: absolute;
-  bottom: 390px;
-  right: 100px;
+  bottom: 330px;
+  right: 33px;
   font-family: 'Noto Sans', sans-serif;
   font-optical-sizing: auto;
   font-weight: 900;
@@ -319,8 +320,8 @@ input[type="time"] {
 
 #reset {
   position: absolute;
-  bottom: 490px;
-  right: 100px;
+  bottom: 440px;
+  right: 33px;
   font-family: 'Noto Sans', sans-serif;
   font-optical-sizing: auto;
   font-weight: 900;
